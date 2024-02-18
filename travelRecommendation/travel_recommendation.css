@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 nav {
-    background-color: #f0f0f0;
     padding: 20px;
     display: flex;
     align-items: center;
@@ -27,3 +26,19 @@ nav {
     color: #333;
     font-weight: bold;
   }
+
+  body {
+    background-image:url('https://images.unsplash.com/photo-1495904786722-d2b5a19a8535?q=80&w=2934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+ }
+
+ #introduction {
+   padding: 250px 1800px 250px 250px;
+   word-wrap: normal;
+ }   
+
+ #bookNow {
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+ }
+
