@@ -16,6 +16,7 @@ function searchTravelRecommendation() {
 
           resultDiv.innerHTML += `<h2>${country.name}</h2>`;
           resultDiv.innerHTML += `<img src="${country.imagesrc}" alt="Change image here">`;
+
           resultDiv.innerHTML += `<p><strong>Description:</strong> ${description}</p>`;
         } else {
           resultDiv.innerHTML = 'Destination not found.';

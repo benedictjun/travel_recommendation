@@ -33,7 +33,7 @@ nav {
  }
 
  #introduction {
-   padding: 250px 1000px 250px 250px;
+   padding: 250px 500px 250px 250px;
    word-wrap: normal;
  }   
 
@@ -43,14 +43,14 @@ nav {
  }
 
  #aboutUs {
-    padding: 250px 1000px 0px 250px;
+    padding: 250px 500px 0px 250px;
     word-wrap: normal;
   }   
 
   #ourTeam {
     display: flex;
     align-items: flex-start;
-    padding: 50px 1000px 250px 250px;
+    padding: 50px 500px 250px 250px;
     word-wrap: normal;
   }   
 
@@ -67,12 +67,12 @@ nav {
   }
 
   #contactUs {
-    padding: 250px 1000px 20px 250px;
+    padding: 250px 500px 20px 250px;
     word-wrap: normal;
   }
 
   #contactUsForm {
     display: flex;
-    padding: 0px 1000px 250px 250px;
+    padding: 0px 500px 250px 250px;
     word-wrap: normal;
   }      
