@@ -59,3 +59,20 @@ nav {
     padding-left: 100px;
     padding-right: 20px;
   }
+
+  #member {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+  }
+
+  #contactUs {
+    padding: 250px 1000px 20px 250px;
+    word-wrap: normal;
+  }
+
+  #contactUsForm {
+    display: flex;
+    padding: 0px 1000px 250px 250px;
+    word-wrap: normal;
+  }      
