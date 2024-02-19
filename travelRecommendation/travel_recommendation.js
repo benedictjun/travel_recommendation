@@ -12,7 +12,7 @@ function searchTravelRecommendation() {
         const country = data.countries.find(item => item.name.toLowerCase() === input); // This searches within the JSON data for a travel recommendation whose name matches the entered input.
 
         if (country) {
-            const description = country.description;
+          const description = country.description;
 
           resultDiv.innerHTML += `<h2>${country.name}</h2>`;
           resultDiv.innerHTML += `<img src="${country.imagesrc}" alt="Change image here">`;
