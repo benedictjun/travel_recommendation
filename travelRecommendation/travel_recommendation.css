@@ -33,7 +33,7 @@ nav {
  }
 
  #introduction {
-   padding: 250px 500px 250px 250px;
+   padding: 250px 500px 50px 250px;
    word-wrap: normal;
  }   
 
@@ -75,4 +75,12 @@ nav {
     display: flex;
     padding: 0px 500px 250px 250px;
     word-wrap: normal;
-  }      
+  }  
+  
+  #result {
+    padding: 0px 500px 250px 250px;
+  }
+  
+  #resultImg {
+    width: 100%;
+  }    

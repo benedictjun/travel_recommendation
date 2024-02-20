@@ -9,27 +9,30 @@ function searchTravelRecommendation() {
       .then(response => response.json())
       .then(data => {
         // Search for matching country, temple, or beach
-        const country = data.countries.for(country => country.name.toLowerCase() === input);  
+        const country = data.countries.find(country => country.name.toLowerCase() === input);  
         const temple = data.temples.find(temple => temple.name.toLowerCase() === input);
         const beach = data.beaches.find(beach => beach.name.toLowerCase() === input);
 
         // Display the result based on the type of recommendation found
         if (country) {
             const cities = country.cities.join(', ');
-            resultDiv.innerHTML += `<h2>${cities.name}</h2>`;
-            resultDiv.innerHTML += `<img src="${cities.imageUrl}" alt="change this">`;
+            resultDiv.innerHTML += `<h2>Search Result:</h2>`;
+            resultDiv.innerHTML += `<h3>${cities.name}</h3>`;
+            resultDiv.innerHTML += `<img src="${cities.imageUrl}" alt="change this" id="resultImg">`;
             resultDiv.innerHTML += `<p><strong>Description:</strong> ${cities.description}</p>`;
             console.log(cities);
 
         } else if (temple) {
-            resultDiv.innerHTML += `<h2>${temple.name}</h2>`;
-            resultDiv.innerHTML += `<img src="${temple.imageUrl}" alt="change this">`;
+            resultDiv.innerHTML += `<h2>Search Result:</h2>`;
+            resultDiv.innerHTML += `<h3>${temple.name}</h3>`;
+            resultDiv.innerHTML += `<img src="${temple.imageUrl}" alt="change this" id="resultImg">`;
             resultDiv.innerHTML += `<p><strong>Description:</strong> ${temple.description}</p>`;
             console.log(temple);
 
         } else if (beach) {
-            resultDiv.innerHTML += `<h2>${beach.name}</h2>`;
-            resultDiv.innerHTML += `<img src="${beach.imageUrl}" alt="change this">`;
+            resultDiv.innerHTML += `<h2>Search Result:</h2>`;
+            resultDiv.innerHTML += `<h3>${beach.name}</h3>`;
+            resultDiv.innerHTML += `<img src="${beach.imageUrl}" alt="change this" id="resultImg">`;
             resultDiv.innerHTML += `<p><strong>Description:</strong> ${beach.description}</p>`;
             console.log(beach);
 
