@@ -1,33 +1,53 @@
 const btnSearch = document.getElementById('btnSearch');
 
-//This function fetches the travel recommendation data from the travel_recommendation_api.json file and searches for a matching recommendation based on user input
 function searchTravelRecommendation() {
-    const input = document.getElementById('search').value.toLowerCase(); //This retrieves the value entered into the input field with the ID search. It converts the entered text to lowercase to ensure case-insensitive comparison.
+    const input = document.getElementById('search').value.toLowerCase();
     const resultDiv = document.getElementById('result'); 
     resultDiv.innerHTML = '';
 
     fetch('travel_recommendation_api.json')
-      .then(response => response.json()) //Converts the fetched response into JSON format.
+      .then(response => response.json())
       .then(data => {
-        const country = data.countries.find(item => item.name.toLowerCase() === input); // This searches within the JSON data for a travel recommendation whose name matches the entered input.
+        // Search for matching country, temple, or beach
+        const country = data.countries.for(country => country.name.toLowerCase() === input);  
+        const temple = data.temples.find(temple => temple.name.toLowerCase() === input);
+        const beach = data.beaches.find(beach => beach.name.toLowerCase() === input);
 
+        // Display the result based on the type of recommendation found
         if (country) {
-          const description = country.description;
+            const cities = country.cities.join(', ');
+            resultDiv.innerHTML += `<h2>${cities.name}</h2>`;
+            resultDiv.innerHTML += `<img src="${cities.imageUrl}" alt="change this">`;
+            resultDiv.innerHTML += `<p><strong>Description:</strong> ${cities.description}</p>`;
+            console.log(cities);
 
-          resultDiv.innerHTML += `<h2>${country.name}</h2>`;
-          resultDiv.innerHTML += `<img src="${country.imagesrc}" alt="Change image here">`;
+        } else if (temple) {
+            resultDiv.innerHTML += `<h2>${temple.name}</h2>`;
+            resultDiv.innerHTML += `<img src="${temple.imageUrl}" alt="change this">`;
+            resultDiv.innerHTML += `<p><strong>Description:</strong> ${temple.description}</p>`;
+            console.log(temple);
 
-          resultDiv.innerHTML += `<p><strong>Description:</strong> ${description}</p>`;
+        } else if (beach) {
+            resultDiv.innerHTML += `<h2>${beach.name}</h2>`;
+            resultDiv.innerHTML += `<img src="${beach.imageUrl}" alt="change this">`;
+            resultDiv.innerHTML += `<p><strong>Description:</strong> ${beach.description}</p>`;
+            console.log(beach);
+
         } else {
-          resultDiv.innerHTML = 'Destination not found.';
+            resultDiv.innerHTML = 'Destination not found.';
         }
       })
-
-      //This handles any errors that might occur during the fetch request or data processing.
       .catch(error => {
         console.error('Error:', error);
         resultDiv.innerHTML = 'An error occurred while fetching data.';
       });
-
-    btnSearch.addEventListener('click', searchTravelRecommendation);
 }
+btnSearch.addEventListener('click', searchTravelRecommendation);
+
+//This function clears the text input. 
+const btnClear = document.getElementById('btnClear');
+
+function clearInput() {
+    document.getElementById('search').value = ''; // Set the value of the input field to an empty string
+}
+btnClear.addEventListener('click', clearInput);
