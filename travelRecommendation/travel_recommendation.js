@@ -52,5 +52,7 @@ const btnClear = document.getElementById('btnClear');
 
 function clearInput() {
     document.getElementById('search').value = ''; // Set the value of the input field to an empty string
+    const resultDiv = document.getElementById('result')
+    resultDiv.innerHTML = '';
 }
 btnClear.addEventListener('click', clearInput);
